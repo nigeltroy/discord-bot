@@ -25,5 +25,5 @@ def main():
 
 if __name__ == '__main__':
     # Daemonize the bot
-    # with daemon.DaemonContext():
-    main()
+    with daemon.DaemonContext():
+        main()
