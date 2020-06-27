@@ -2,7 +2,7 @@ import random
 
 
 def get_welcome_message(username):
-    # thanks to user macdja38: https://gist.github.com/macdja38/12dff2a6a496cd2d9185fec43c01d77b
+    # Thanks to user macdja38: https://gist.github.com/macdja38/12dff2a6a496cd2d9185fec43c01d77b
     welcome_messages = [
         f"{username} just joined. Everyone, look busy!",
         f"{username} just joined. Can I get a heal?",
