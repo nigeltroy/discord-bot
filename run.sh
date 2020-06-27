@@ -39,11 +39,16 @@ pip3 install -r requirements.txt
 # If .env doesn't exist, write into the stub env file and
 # copy to .env
 if [[ -f .env ]]; then
+    :
+else
     # Open up the given stub .env file and
     # copy the stub .env file to the actual .env file
     vim stub.env
     cp stub.env .env
 fi
+
+# Kill all old main.py processes
+pkill -f main.py
 
 # Run the project (as a daemon as specced in main.py)
 python3 main.py
