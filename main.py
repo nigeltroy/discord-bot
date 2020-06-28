@@ -9,6 +9,7 @@ def main():
     # event and command functionality across different files
     cogs = [
         'cogs.commands',
+        'cogs.errors',
         'cogs.events'
     ]
 
