@@ -51,4 +51,4 @@ fi
 pkill -f main.py
 
 # Run the project (as a daemon as specced in main.py)
-python3 main.py
+sudo python3 main.py

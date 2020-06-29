@@ -59,5 +59,5 @@ You can run my bot locally or, for example, in an AWS EC2 instance, by doing eit
     - Run the bot
 
         ```bash
-        python3 main.py
+        sudo python3 main.py
         ```
