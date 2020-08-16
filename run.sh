@@ -7,8 +7,8 @@
 # Go to your home directory
 cd ~
 
-# Define project directory name
-dir="discord-bot"
+# Set project directory name based on argument given
+dir=$1
 repo="https://github.com/nigeltroy/discord-bot.git"
 
 # If project directory exists in the current directory,
@@ -21,7 +21,7 @@ elif [[ ${PWD##*/} == $dir ]]; then
     :
 # else if not found, clone the repo
 else
-    git clone $repo
+    git clone $repo $dir
     cd ./$dir
 fi
 
@@ -47,8 +47,9 @@ else
     cp stub.env .env
 fi
 
-# Kill all old main.py processes
-pkill -f main.py
+# If .bot-pid exists, kill the process with that PID
+if [[ -f .bot-pid ]]; then
+    kill -9 $(cat .bot-pid)
 
 # Run the project (as a daemon as specced in main.py)
-sudo python3 main.py
+sudo python3 main.py & echo $! > .bot-pid

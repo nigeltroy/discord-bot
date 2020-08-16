@@ -18,10 +18,10 @@ You can run my bot locally or, for example, in an AWS EC2 instance, by doing eit
         chmod +x run.sh
         ```
 
-    - Run the script
+    - Run the script, giving the name of the bot as the argument name. For eg.:
 
         ```bash
-        ./run.sh
+        ./run.sh mega-simp-bot
         ```
 
 2. Clone the repo and run `main.py` (make sure that Python 3 and pip are installed)
@@ -38,16 +38,16 @@ You can run my bot locally or, for example, in an AWS EC2 instance, by doing eit
         cd discord-bot
         ```
 
-    - Fill out `stub.env` file with the environment variables (replace `vim` with the text editor of your choice)
-
-        ```bash
-        vim stub.env
-        ```
-
     - Copy `stub.env` to `.env`
 
         ```bash
         cp stub.env .env
+        ```
+
+    - Fill out `.env` file with the environment variables (replace `vim` with the text editor of your choice)
+
+        ```bash
+        vim .env
         ```
 
     - Install Python requirements for the project
@@ -56,8 +56,8 @@ You can run my bot locally or, for example, in an AWS EC2 instance, by doing eit
         pip3 install -r requirements.txt
         ```
 
-    - Run the bot
+    - Run the bot and write the process ID to `.bot-pid`
 
         ```bash
-        sudo python3 main.py
+        sudo python3 main.py & echo $! > .bot-pid
         ```
