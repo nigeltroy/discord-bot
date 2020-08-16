@@ -50,6 +50,7 @@ fi
 # If .bot-pid exists, kill the process with that PID
 if [[ -f .bot-pid ]]; then
     kill -9 $(cat .bot-pid)
+fi
 
 # Run the project (as a daemon as specced in main.py)
 sudo python3 main.py & echo $! > .bot-pid
